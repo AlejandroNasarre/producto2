@@ -9,6 +9,6 @@ public interface IMenuService {
     Optional<Menu> findById(Long id);
     Menu create(Menu menu);
     Menu update(Menu menu);
-    Menu delete(Long id);
+    void delete(Long id);
 
 }

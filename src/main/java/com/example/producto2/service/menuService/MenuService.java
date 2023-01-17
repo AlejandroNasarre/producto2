@@ -9,31 +9,36 @@ import java.util.Optional;
 
 
 @Service
-public class MenuService implements IMenuService{
+public class MenuService implements IMenuService {
     @Autowired
     private MenuRepository menuRepository;
 
-    public Object findAll() { return this.menuRepository.findAll();}
+    public Object findAll() {
+        return this.menuRepository.findAll();
+    }
 
     @Override
     public Optional<Menu> findById(Long id) {
-        return Optional.empty();
+        return menuRepository.findById(id);
     }
 
     @Override
     public Menu create(Menu menu) {
-        return null;
+        return menuRepository.save(menu);
     }
 
     @Override
     public Menu update(Menu menu) {
-        return null;
+        Menu currentMenu = menuRepository.findById(menu.getId()).get();
+        currentMenu.setPrice(menu.getPrice());
+        currentMenu.setName(menu.getName());
+        return menuRepository.save(currentMenu);
     }
-
     @Override
-    public Menu delete(Long id) {
-        return null;
+    public void delete(Long id) {
+        Optional<Menu> menu = menuRepository.findById(id);
+        System.out.println(menu);
+        menuRepository.deleteById(id);
     }
-
 
 }
