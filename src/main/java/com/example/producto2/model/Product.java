@@ -5,7 +5,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "Producto")
 
-public class Producto {
+public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -17,13 +17,13 @@ public class Producto {
     private String description;
 
     private double kcal;
-    public Producto(String name,String description,double kcal){
+    public Product(String name, String description, double kcal){
         this.name = name;
         this.description = description;
         this.kcal = kcal;
     }
 
-    public Producto() {
+    public Product() {
 
     }
 
