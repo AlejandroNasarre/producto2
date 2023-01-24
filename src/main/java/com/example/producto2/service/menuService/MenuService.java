@@ -40,5 +40,4 @@ public class MenuService implements IMenuService {
         System.out.println(menu);
         menuRepository.deleteById(id);
     }
-
 }
