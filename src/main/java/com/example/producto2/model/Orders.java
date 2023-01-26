@@ -3,8 +3,8 @@ package com.example.producto2.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name= "Order")
-public class Order {
+@Table(name= "Orders")
+public class Orders {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -14,13 +14,26 @@ public class Order {
     private Long orderNumber;
     private String address;
 
-    public Order(Long orderNumber,String address){
+    @ManyToOne
+    @JoinColumn(name = "num_user", referencedColumnName = "num_user")
+    private User user;
+
+    public Orders(Long orderNumber, String address,User user){
         this.orderNumber = orderNumber;
         this.address = address;
+        this.user = user;
     }
 
-    public Order(){
+    public Orders(){
 
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public Long getId() {

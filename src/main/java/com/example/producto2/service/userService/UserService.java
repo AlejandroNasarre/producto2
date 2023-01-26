@@ -1,10 +1,7 @@
 package com.example.producto2.service.userService;
 
-import com.example.producto2.model.Order;
 import com.example.producto2.model.User;
-import com.example.producto2.repository.OrderRepository;
 import com.example.producto2.repository.UserRepository;
-import com.example.producto2.service.orderService.IOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
