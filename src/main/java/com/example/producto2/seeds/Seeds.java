@@ -2,9 +2,11 @@ package com.example.producto2.seeds;
 
 import com.example.producto2.model.Menu;
 import com.example.producto2.model.Orders;
+import com.example.producto2.model.Product;
 import com.example.producto2.model.User;
 import com.example.producto2.repository.MenuRepository;
 import com.example.producto2.repository.OrderRepository;
+import com.example.producto2.repository.ProductRepository;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -12,10 +14,12 @@ import java.util.List;
 public class Seeds {
     private MenuRepository menuRepository;
     private OrderRepository orderRepository;
+    private ProductRepository productRepository;
 
-    public Seeds(MenuRepository menuRepository, OrderRepository orderRepository) {
+    public Seeds(MenuRepository menuRepository, OrderRepository orderRepository, ProductRepository productRepository) {
         this.menuRepository = menuRepository;
         this.orderRepository = orderRepository;
+        this.productRepository = productRepository;
     }
 
     public void generateSeeds() {
@@ -32,6 +36,10 @@ public class Seeds {
         Orders order2 = new Orders(2l, "calle pedido numero 2",user2);
         Orders order3 = new Orders(3l, "calle pedido numero 3",user3);
 
+        Product product = new Product("Muslo de Pollo", "Muslo de Pollo frito", 300);
+        Product product2 = new Product("Sardinas", "Sardinas frescas del mediterraneo", 500);
+        Product product3 = new Product("Helado de Frambuesa", "Helado natural hecho con frutas recolectadas a mano", 700);
+
         menuRepository.save(menuLibanes);
         menuRepository.save(menuVeggie);
         menuRepository.save(menuBurguer);
@@ -39,5 +47,9 @@ public class Seeds {
         orderRepository.save(order);
         orderRepository.save(order2);
         orderRepository.save(order3);
+
+        productRepository.save(product);
+        productRepository.save(product2);
+        productRepository.save(product3);
     }
 }
