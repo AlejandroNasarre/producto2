@@ -9,13 +9,13 @@
         <version>2.6.4</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.example.producto2</groupId>
-    <artifactId>producto2</artifactId>
+    <groupId>com.paracasa</groupId>
+    <artifactId>paraCasa</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>producto2</name>
-    <description>producto2</description>
+    <name>paraCasa</name>
+    <description>paraCasa</description>
     <properties>
-        <java.version>18</java.version>
+        <java.version>11</java.version>
     </properties>
     <dependencies>
         <dependency>
@@ -69,7 +69,15 @@
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-test</artifactId>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>xml-apis</groupId>
             <artifactId>xml-apis</artifactId>

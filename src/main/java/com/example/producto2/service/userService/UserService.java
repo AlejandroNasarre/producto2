@@ -36,10 +36,22 @@ public class UserService implements IUserService {
         currentUser.setPhone(user.getPhone());
         return userRepository.save(currentUser);
     }
+
     @Override
     public void delete(Long id) {
         Optional<User> menu = userRepository.findById(id);
         System.out.println(menu);
         userRepository.deleteById(id);
+    }
+
+    @Override
+    public User findByUsername(String username) {
+        return userRepository.findByUsername(username);
+    }
+
+    @Override
+    public User registrar(User u) {
+        u.setPassword(passwordEncoder.encode(u.getPassword()));
+        return usuarioRepository.save(u);
     }
 }

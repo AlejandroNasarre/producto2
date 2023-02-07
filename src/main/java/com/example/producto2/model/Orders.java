@@ -14,27 +14,27 @@ public class Orders {
     private Long orderNumber;
     private String address;
 
-    @ManyToOne
-    @JoinColumn(name = "num_user", referencedColumnName = "num_user")
-    private User user;
+//    @ManyToOne
+//    @JoinColumn(name = "num_user", referencedColumnName = "num_user")
+//    private User user;
 
     public Orders(Long orderNumber, String address,User user){
         this.orderNumber = orderNumber;
         this.address = address;
-        this.user = user;
+//        this.user = user;
     }
 
     public Orders(){
 
     }
 
-    public User getUser() {
-        return user;
-    }
+//    public User getUser() {
+//        return user;
+//    }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
+//    public void setUser(User user) {
+//        this.user = user;
+//    }
 
     public Long getId() {
         return id;
