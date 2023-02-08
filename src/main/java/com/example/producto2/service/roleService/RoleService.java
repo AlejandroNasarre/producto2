@@ -1,7 +1,7 @@
 package com.example.producto2.service.roleService;
 
-import com.paracasa.spring.app.model.Role;
-import com.paracasa.spring.app.repository.RoleRepository;
+import com.example.producto2.model.Role;
+import com.example.producto2.repository.RoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

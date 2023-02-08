@@ -21,6 +21,8 @@ public class User {
     private String email;
     private long phone;
 
+    private String password;
+
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     @JoinTable(name = "users_roles",
             joinColumns = {
@@ -34,11 +36,12 @@ public class User {
 //    @OneToMany()
 //    private Collection<Orders> orders;
 
-    public User(String name,String surnames,String email,long phone, Collection<Orders> orders){
+    public User(String name,String surnames,String email, String password,long phone, Collection<Orders> orders){
         this.name = name;
         this.surnames = surnames;
         this.email = email;
         this.phone = phone;
+        this.password = password;
 
 //        this.orders = orders;
     }
@@ -91,6 +94,14 @@ public class User {
 
     public String getEmail() {
         return email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public void setEmail(String email) {

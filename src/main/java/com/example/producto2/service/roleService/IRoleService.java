@@ -1,7 +1,6 @@
 package com.example.producto2.service.roleService;
 
-import com.paracasa.spring.app.model.Role;
-
+import com.example.producto2.model.Role;
 import java.util.List;
 import java.util.Optional;
 

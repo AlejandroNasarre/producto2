@@ -3,6 +3,7 @@ package com.example.producto2.service.userService;
 import com.example.producto2.model.User;
 import com.example.producto2.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -10,6 +11,8 @@ import java.util.Optional;
 
 @Service
 public class UserService implements IUserService {
+    @Autowired
+    private BCryptPasswordEncoder passwordEncoder;
     @Autowired
     private UserRepository userRepository;
 
@@ -52,6 +55,6 @@ public class UserService implements IUserService {
     @Override
     public User registrar(User u) {
         u.setPassword(passwordEncoder.encode(u.getPassword()));
-        return usuarioRepository.save(u);
+        return userRepository.save(u);
     }
 }

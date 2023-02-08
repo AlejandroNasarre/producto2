@@ -28,9 +28,9 @@ public class Seeds {
         Menu menuVeggie = new Menu("Veggie", 20);
         Menu menuBurguer = new Menu("Libanes", 25);
 
-        User user = new User("1", "11", "1@gmail.com", 1, new LinkedList<Orders>());
-        User user2 = new User("2","22","2@gmail.com",2,new LinkedList<Orders>());
-        User user3 = new User("3","33","1@gmail.com",3,new LinkedList<Orders>());
+        User user = new User("1", "11", "1@gmail.com","1", 1, new LinkedList<Orders>());
+        User user2 = new User("2","22","2@gmail.com","2",2,new LinkedList<Orders>());
+        User user3 = new User("3","33","1@gmail.com","3",3,new LinkedList<Orders>());
 
         Orders order = new Orders(1l, "calle pedido numero 1",user);
         Orders order2 = new Orders(2l, "calle pedido numero 2",user2);
