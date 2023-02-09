@@ -15,7 +15,7 @@ public class User {
 //    @Column(name = "num_user")
     private Long id;
 
-    private String name;
+    private String username;
 
     private String surnames;
     private String email;
@@ -36,13 +36,12 @@ public class User {
 //    @OneToMany()
 //    private Collection<Orders> orders;
 
-    public User(String name,String surnames,String email, String password,long phone, Collection<Orders> orders){
-        this.name = name;
+    public User(String username, String surnames, String email, String password, long phone, Collection<Orders> orders){
+        this.username = username;
         this.surnames = surnames;
         this.email = email;
         this.phone = phone;
         this.password = password;
-
 //        this.orders = orders;
     }
 
@@ -76,12 +75,12 @@ public class User {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String name) {
+        this.username = name;
     }
 
     public String getSurnames() {

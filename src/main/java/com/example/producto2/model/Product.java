@@ -16,7 +16,19 @@ public class Product {
 
     private String description;
 
+
+    private double price;
+
     private double kcal;
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
     public Product(String name, String description, double kcal){
         this.name = name;
         this.description = description;

@@ -33,7 +33,7 @@ public class UserService implements IUserService {
     @Override
     public User update(User user) {
         User currentUser = userRepository.findById(user.getId()).get();
-        currentUser.setName(user.getName());
+        currentUser.setUsername(user.getUsername());
         currentUser.setSurnames(user.getSurnames());
         currentUser.setEmail(user.getEmail());
         currentUser.setPhone(user.getPhone());
