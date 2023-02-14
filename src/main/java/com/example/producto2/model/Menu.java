@@ -2,6 +2,8 @@ package com.example.producto2.model;
 
 
 import javax.persistence.*;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Entity
 @Table(name= "Menu")
@@ -14,6 +16,9 @@ public class Menu {
 
     private String name;
     private double price;
+
+    @ManyToMany(mappedBy = "menusAssociated", fetch = FetchType.LAZY)
+    private Set<Product> productsAssociated = new LinkedHashSet<>();
 
     public Menu(String name, double price) {
         this.setName(name);
@@ -35,4 +40,13 @@ public class Menu {
     public double getPrice() { return price; }
 
     public void setPrice (double price) { this.price = price; }
+
+
+    public Set<Product> getProductsAssociated() {
+        return productsAssociated;
+    }
+
+    public void setProductsAssociated(Set<Product> productsAssociated) {
+        this.productsAssociated = productsAssociated;
+    }
 }

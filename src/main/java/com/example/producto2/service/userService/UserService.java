@@ -34,7 +34,6 @@ public class UserService implements IUserService {
     public User update(User user) {
         User currentUser = userRepository.findById(user.getId()).get();
         currentUser.setUsername(user.getUsername());
-        currentUser.setSurnames(user.getSurnames());
         currentUser.setEmail(user.getEmail());
         currentUser.setPhone(user.getPhone());
         return userRepository.save(currentUser);

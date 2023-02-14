@@ -1,6 +1,7 @@
 package com.example.producto2.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -14,13 +15,13 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
 //    @Column(name = "num_user")
     private Long id;
-
+    @NotBlank
     private String username;
-
-    private String surnames;
+    @NotBlank
     private String email;
+    @NotBlank
     private long phone;
-
+    @NotBlank
     private String password;
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
@@ -36,9 +37,8 @@ public class User {
 //    @OneToMany()
 //    private Collection<Orders> orders;
 
-    public User(String username, String surnames, String email, String password, long phone, Collection<Orders> orders){
+    public User(String username, String email, String password, long phone, Collection<Orders> orders){
         this.username = username;
-        this.surnames = surnames;
         this.email = email;
         this.phone = phone;
         this.password = password;
@@ -81,14 +81,6 @@ public class User {
 
     public void setUsername(String name) {
         this.username = name;
-    }
-
-    public String getSurnames() {
-        return surnames;
-    }
-
-    public void setSurnames(String surnames) {
-        this.surnames = surnames;
     }
 
     public String getEmail() {

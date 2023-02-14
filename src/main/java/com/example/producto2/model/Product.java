@@ -1,9 +1,11 @@
 package com.example.producto2.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
-@Table(name = "Producto")
+@Table(name = "Product")
 
 public class Product {
 
@@ -16,10 +18,20 @@ public class Product {
 
     private String description;
 
-
     private double price;
 
     private double kcal;
+
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    @JoinTable(name = "menu_products",
+            joinColumns = {
+                    @JoinColumn(name = "product_id", referencedColumnName =
+                            "id",
+                            nullable = false, updatable = false)},
+            inverseJoinColumns = {
+                    @JoinColumn(name = "menu_id", referencedColumnName = "id",
+                            nullable = false, updatable = false)})
+    private Set<Menu> menusAssociated = new HashSet<>();
 
     public double getPrice() {
         return price;
@@ -70,4 +82,13 @@ public class Product {
     public void setKcal(double kcal) {
         this.kcal = kcal;
     }
+
+    public Set<Menu> getMenusAssociated() {
+        return menusAssociated;
+    }
+
+    public void setMenusAssociated(Set<Menu> menusAssociated) {
+        this.menusAssociated = menusAssociated;
+    }
+
 }
